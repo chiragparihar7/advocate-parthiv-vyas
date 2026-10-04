@@ -1,26 +1,259 @@
 @import "tailwindcss";
 
+/* =========================================================
+   ADVOCATE PARTHIV VYAS
+   GLOBAL CONFIGURATION
+   Root Variables Only
+   ========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* =======================================================
+     BRAND COLORS
+     ======================================================= */
+
+  --legal-navy: #0e2238;
+  --legal-navy-dark: #081725;
+  --legal-navy-light: #193750;
+
+  --legal-gold: #c9a45c;
+  --legal-gold-dark: #a98543;
+  --legal-gold-light: #e4cc98;
+
+  /* =======================================================
+     BACKGROUNDS
+     ======================================================= */
+
+  --background: #faf8f3;
+  --background-white: #ffffff;
+  --background-dark: #0e2238;
+  --background-dark-deep: #081725;
+  --background-soft: #f5f2eb;
+  --background-gold: #fbf7ed;
+
+  /* =======================================================
+     TEXT COLORS
+     ======================================================= */
+
+  --foreground: #1d2935;
+  --foreground-dark: #0e2238;
+  --foreground-light: #ffffff;
+
+  --text-primary: #1d2935;
+  --text-secondary: #647180;
+  --text-muted: #8993a0;
+
+  --text-on-dark: #f8f6f0;
+  --text-on-gold: #0e2238;
+
+  /* =======================================================
+     BORDERS
+     ======================================================= */
+
+  --border: #e7e1d6;
+  --border-light: #eeeae2;
+  --border-dark: #294157;
+  --border-gold: #c9a45c;
+
+  /* =======================================================
+     STATUS COLORS
+     ======================================================= */
+
+  --success: #2f6f52;
+  --warning: #a8782e;
+  --error: #a94442;
+  --info: #315f7c;
+
+  /* =======================================================
+     SHADOWS
+     ======================================================= */
+
+  --shadow-sm: 0 1px 3px rgba(14, 34, 56, 0.06);
+  --shadow-md: 0 8px 24px rgba(14, 34, 56, 0.08);
+  --shadow-lg: 0 16px 45px rgba(14, 34, 56, 0.12);
+  --shadow-gold: 0 8px 25px rgba(201, 164, 92, 0.18);
+
+  /* =======================================================
+     RADIUS
+     ======================================================= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* =======================================================
+     TRANSITIONS
+     ======================================================= */
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
 }
+
+/* =========================================================
+   TAILWIND THEME VARIABLES
+   ========================================================= */
 
 @theme inline {
+  /* Colors */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-legal-navy: var(--legal-navy);
+  --color-legal-navy-dark: var(--legal-navy-dark);
+  --color-legal-navy-light: var(--legal-navy-light);
+
+  --color-legal-gold: var(--legal-gold);
+  --color-legal-gold-dark: var(--legal-gold-dark);
+  --color-legal-gold-light: var(--legal-gold-light);
+
+  --color-background-white: var(--background-white);
+  --color-background-soft: var(--background-soft);
+  --color-background-gold: var(--background-gold);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --color-border-dark: var(--border-dark);
+  --color-border-gold: var(--border-gold);
+
+  /* Fonts */
+
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
+
+  --font-mono:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   MINIMUM GLOBAL RESET
+   No design styling here.
+   Components control their own appearance.
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   BOX SIZING
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   FORM FONT INHERIT
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================================
+   MEDIA DEFAULTS
+   ========================================================= */
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--legal-gold);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TEXT SELECTION
+   Keep subtle and neutral.
+   ========================================================= */
+
+::selection {
+  background: rgba(201, 164, 92, 0.2);
+  color: inherit;
+}
+
+/* =========================================================
+   SCROLLBAR
+   Minimal global browser styling.
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--legal-navy-light);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--legal-gold);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

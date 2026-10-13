@@ -71,14 +71,14 @@ export default function Hero() {
               <span className="h-px w-11 bg-[#C9A45C]" />
 
               <span className="text-[9px] font-bold uppercase tracking-[0.26em] text-[#E4CC98] sm:text-[10px]">
-                Advocate • Legal Practice • Ahmedabad
+                V&P ADVOCATES AND NOTARY · LEGAL PRACTICE · AHMEDABAD
               </span>
             </div>
 
             {/* Main Heading */}
             <h1 className="mt-5 max-w-[760px] font-serif text-[52px] font-medium leading-[0.9] tracking-[-0.045em] text-[#FAF8F3] sm:text-[64px] md:text-[70px] lg:text-[76px] xl:text-[82px]">
-              Advocate
-              <span className="block text-[#C9A45C]">Parthiv Vyas</span>
+              V&P Advocates 
+              <span className="block text-[#C9A45C]">and Notary</span>
             </h1>
 
             {/* Gold divider */}
@@ -90,19 +90,15 @@ export default function Hero() {
 
             {/* Main Statement */}
             <h2 className="mt-6 max-w-[760px] font-serif text-2xl leading-[1.25] text-[#F1E8D6] sm:text-[27px] lg:text-[29px]">
-              A professional legal website presenting legal information,
-              practice areas and professional details with clarity and
-              discretion.
+              Clear Legal Guidance. Thoughtful Representation.
             </h2>
 
             {/* Supporting Content */}
             <p className="mt-5 max-w-[680px] text-[14px] leading-6 text-[#B7C3CE] sm:text-[15px] sm:leading-7">
-              Explore information about Advocate Parthiv Vyas, areas of legal
-              practice, professional experience, legal articles, frequently
-              asked questions and appropriate ways to contact the office.
-              Information on this website is provided for general
-              informational purposes and should be considered in the context
-              of the specific legal matter.
+             V&P Advocates and Notary provides legal assistance across civil and criminal litigation, property and revenue disputes, family matters, commercial disputes, tribunal proceedings, legal drafting, and notary services. Our approach focuses on understanding each matter, explaining available legal options, and preparing carefully for the steps ahead.
+            </p>
+            <p className="mt-5 max-w-[680px] text-[14px] leading-6 text-[#B7C3CE] sm:text-[15px] sm:leading-7">
+             Explore our practice areas, learn about our professional approach, and find the appropriate way to contact our office in Ahmedabad, Gujarat.
             </p>
 
             {/* CTA */}
@@ -156,7 +152,7 @@ export default function Hero() {
                     </p>
 
                     <p className="mt-1 text-[10px] leading-4 text-[#81909F]">
-                      Practice areas & resources
+                      Litigation, Advisory & Documentation
                     </p>
                   </div>
                 </div>
@@ -173,11 +169,11 @@ export default function Hero() {
 
                   <div>
                     <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-[#F5F1E8]">
-                      Professional
+                      Our Approach
                     </p>
 
                     <p className="mt-1 text-[10px] leading-4 text-[#81909F]">
-                      Clear & responsible
+                      Careful Preparation & Clear Communication
                     </p>
                   </div>
                 </div>
@@ -287,11 +283,11 @@ export default function Hero() {
                 <div className="flex items-end justify-between gap-5">
                   <div>
                     <p className="font-serif text-[28px] leading-none text-[#FAF8F3]">
-                      Parthiv Vyas
+                      V&P Advocates and Notary
                     </p>
 
                     <p className="mt-2 text-[8px] font-bold uppercase tracking-[0.22em] text-[#81909F]">
-                      Advocate • Ahmedabad, Gujarat
+                      Led by Advocate Parthiv Vyas
                     </p>
                   </div>
 

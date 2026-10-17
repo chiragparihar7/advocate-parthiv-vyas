@@ -21,7 +21,6 @@ const practiceLinks = [
 
 const resourceLinks = [
   { name: "About Advocate", href: "/about" },
-  { name: "Experience", href: "/experience" },
   { name: "Legal Articles", href: "/legal-articles" },
   { name: "Frequently Asked Questions", href: "/faqs" },
   { name: "Contact", href: "/contact" },

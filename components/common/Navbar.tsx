@@ -10,7 +10,6 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Practice Areas", href: "/practice-areas" },
-  { name: "Experience", href: "/experience" },
   { name: "FAQs", href: "/faqs" },
   { name: "Contact", href: "/contact" },
 ];
@@ -71,20 +70,18 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <div className="h-8 w-px bg-[#E7E1D6]" />
 
-     
-<a
-  href="tel:+919879811440"
-  aria-label="Call V&P Advocates and Notary at +91 98798 11440"
-  className="group inline-flex min-h-11 items-center gap-2.5 bg-[#0E2238] px-4 py-3 text-xs font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#17384F]"
->
-  <Phone size={14} className="text-white" />
-  <span className="text-white">Call +91 98798 11440</span>
-  <ArrowUpRight
-    size={14}
-    className="text-white transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-  />
-</a>
-
+          <a
+            href="tel:+919879811440"
+            aria-label="Call V&P Advocates and Notary at +91 98798 11440"
+            className="group inline-flex min-h-11 items-center gap-2.5 bg-[#0E2238] px-4 py-3 text-xs font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#17384F]"
+          >
+            <Phone size={14} className="text-white" />
+            <span className="text-white">Call +91 98798 11440</span>
+            <ArrowUpRight
+              size={14}
+              className="text-white transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </a>
         </div>
 
         {/* Mobile menu button */}

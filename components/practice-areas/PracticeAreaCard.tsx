@@ -8,13 +8,11 @@ import {
   Gavel,
   Scale,
 } from "lucide-react";
-import Link from "next/link";
 
 interface PracticeAreaCardProps {
   number: string;
   title: string;
   description: string;
-  slug: string;
   icon: string;
 }
 
@@ -29,7 +27,6 @@ export default function PracticeAreaCard({
   number,
   title,
   description,
-  slug,
   icon,
 }: PracticeAreaCardProps) {
   const Icon = icons[icon as keyof typeof icons] ?? Scale;
@@ -38,56 +35,55 @@ export default function PracticeAreaCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="group"
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.45 }}
+      className="group h-full"
     >
-      <Link
-        href={`/practice-areas/${slug}`}
-        className="relative block h-full overflow-hidden border border-[#E4DED3] bg-white p-7 transition-all duration-300 hover:border-[#C9A45C] hover:-translate-y-1"
-      >
+      <div className="relative flex h-full flex-col overflow-hidden border border-[#E4DED3] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A45C] hover:shadow-[0_12px_30px_rgba(14,34,56,0.06)] sm:p-7">
         {/* Hover Accent */}
         <span className="absolute bottom-0 left-0 top-0 w-[2px] origin-bottom scale-y-0 bg-[#C9A45C] transition-transform duration-300 group-hover:scale-y-100" />
 
-        {/* Top */}
+        {/* Card Header */}
         <div className="flex items-start justify-between">
           <span className="font-serif text-[24px] !text-[#C9A45C]">
             {number}
           </span>
 
-          <div className="flex h-9 w-9 items-center justify-center border border-[#E7E1D6] bg-[#FAF8F3] transition-colors duration-300 group-hover:border-[#C9A45C]/40 group-hover:bg-[#FBF7ED]">
+          <div className="flex h-10 w-10 items-center justify-center border border-[#E7E1D6] bg-[#FAF8F3] transition-colors duration-300 group-hover:border-[#C9A45C]/40 group-hover:bg-[#FBF7ED]">
             <Icon
-              size={17}
-              strokeWidth={1.25}
+              size={18}
+              strokeWidth={1.35}
               className="!text-[#A98543]"
+              aria-hidden="true"
             />
           </div>
         </div>
 
-        {/* Content */}
-        <div className="mt-9">
-          <h3 className="font-serif text-[27px] leading-tight !text-[#0E2238]">
+        {/* Card Content */}
+        <div className="mt-7 flex-1">
+          <h3 className="font-serif text-[24px] leading-tight !text-[#0E2238] transition-colors duration-300 group-hover:!text-[#A98543]">
             {title}
           </h3>
 
-          <p className="mt-3 max-w-md text-[12px] leading-6 !text-[#6B7785]">
+          <p className="mt-3 text-[12px] leading-6 !text-[#6B7785]">
             {description}
           </p>
         </div>
 
-        {/* Footer */}
-        <div className="mt-8 flex items-center justify-between border-t border-[#EEEAE2] pt-4">
-          <span className="text-[8px] font-bold uppercase tracking-[0.2em] !text-[#8993A0] transition-colors duration-300 group-hover:!text-[#A98543]">
-            Explore
+        {/* Footer — informational, not a link */}
+        <div className="mt-7 flex items-center justify-between border-t border-[#EEEAE2] pt-4">
+          <span className="text-[9px] font-bold uppercase tracking-[0.18em] !text-[#8993A0]">
+            Legal Practice
           </span>
 
           <ArrowUpRight
             size={15}
             strokeWidth={1.4}
-            className="!text-[#A98543] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+            className="!text-[#A98543] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            aria-hidden="true"
           />
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 }

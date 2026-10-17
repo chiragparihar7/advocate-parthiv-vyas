@@ -1,3 +1,4 @@
+
 import {
   getPracticeAreaBySlug,
   practiceAreas,
@@ -9,7 +10,7 @@ import {
    ========================================================= */
 
 /**
- * Get a practice area safely from a slug.
+ * Safely find a practice area by its slug.
  */
 export function findPracticeArea(
   slug: string
@@ -22,7 +23,7 @@ export function findPracticeArea(
  *
  * Used by generateStaticParams().
  */
-export function getAllPracticeAreaSlugs() {
+export function getAllPracticeAreaSlugs(): { slug: string }[] {
   return practiceAreas.map((area) => ({
     slug: area.slug,
   }));

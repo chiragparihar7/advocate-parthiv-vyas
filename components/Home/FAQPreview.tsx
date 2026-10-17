@@ -15,27 +15,39 @@ import { useState } from "react";
 const faqs = [
   {
     number: "01",
-    question: "What information is available on this website?",
+    question: "What legal matters does V&P Advocates and Notary handle?",
     answer:
-      "The website provides general professional information, practice-area details, legal educational resources, frequently asked questions and appropriate contact information.",
+      "The firm provides legal assistance across civil litigation, criminal law, family and matrimonial disputes, land and property matters, cheque bounce cases, contract and commercial disputes, cyber law, preventive detention under PASA, labour and employment law, tribunal matters, legal drafting, and notary services.",
   },
   {
     number: "02",
-    question: "Does the information on this website constitute legal advice?",
+    question: "How can I discuss my legal matter with the firm?",
     answer:
-      "No. Website content is intended for general informational and educational purposes. Legal advice depends on the specific facts, circumstances and applicable law relating to an individual matter.",
+      "You can use the contact details or enquiry form provided on this website to get in touch. Briefly explain the nature of your matter and any relevant deadlines. The next steps will depend on the circumstances, documents, and applicable law.",
   },
   {
     number: "03",
-    question: "Can I contact the advocate about a legal matter?",
+    question: "What documents should I bring for a legal consultation?",
     answer:
-      "Visitors may use the appropriate contact channel provided on the website to submit an enquiry. Any professional engagement remains subject to the nature of the matter and appropriate communication.",
+      "Bring documents relevant to your matter, such as agreements, notices, court orders, correspondence, identity documents where required, or property records. The specific documents needed will depend on the type of dispute and the legal assistance being sought.",
   },
   {
     number: "04",
-    question: "Are all legal matters covered by the information provided?",
+    question: "Can I seek assistance with property or revenue disputes?",
     answer:
-      "No. Legal matters can vary significantly based on facts, documents, jurisdiction and applicable law. The website presents selected general information and should not be treated as an exhaustive resource.",
+      "Legal assistance may be sought for matters involving property title, possession, partition, tenancy, property documents, and revenue proceedings. Depending on the nature of the matter, the appropriate forum may include a civil court, the Special Secretary (Revenue Department), or the Gujarat Revenue Tribunal.",
+  },
+  {
+    number: "05",
+    question: "Can the firm assist with cheque bounce cases?",
+    answer:
+      "The firm handles matters relating to cheque dishonour under Section 138 of the Negotiable Instruments Act, including relevant legal notices, complaints, and court proceedings. The applicable procedure and timelines depend on the facts and circumstances of the case.",
+  },
+  {
+    number: "06",
+    question: "Does the firm provide legal drafting and notary services?",
+    answer:
+      "The firm offers legal drafting for documents such as contracts, agreements, and sale deeds, along with notary services for documents including affidavits and declarations. Requirements depend on the document, its purpose, and applicable legal formalities.",
   },
 ];
 
@@ -48,10 +60,7 @@ export default function FAQPreview() {
 
   return (
     <section className="relative overflow-hidden bg-white py-10 sm:py-12 lg:py-14">
-      {/* =========================================================
-          BACKGROUND
-      ========================================================= */}
-
+      {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute inset-0 opacity-[0.016]"
@@ -69,15 +78,9 @@ export default function FAQPreview() {
         <div className="absolute -right-20 bottom-[-110px] h-[300px] w-[300px] rounded-full border border-[#C9A45C]/10" />
       </div>
 
-      {/* =========================================================
-          CONTAINER
-      ========================================================= */}
-
+      {/* Main Container */}
       <div className="relative mx-auto max-w-[1280px] px-6 lg:px-10">
-        {/* =======================================================
-            HEADER
-        ======================================================= */}
-
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +88,6 @@ export default function FAQPreview() {
           transition={{ duration: 0.7 }}
           className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
         >
-          {/* Left */}
           <div>
             <div className="flex items-center gap-3">
               <span className="h-px w-11 bg-[#C9A45C]" />
@@ -95,20 +97,19 @@ export default function FAQPreview() {
               </span>
             </div>
 
-            <h2 className="mt-5 max-w-3xl font-serif text-[50px] leading-[0.94] tracking-[-0.035em] text-[#0E2238] sm:text-[60px] lg:text-[70px]">
-              Common questions,
+            <h2 className="mt-5 max-w-3xl font-serif text-[44px] leading-[0.98] tracking-[-0.035em] text-[#0E2238] sm:text-[56px] lg:text-[66px]">
+              Your legal questions,
               <span className="block text-[#A98543]">
-                clearly answered.
+                addressed clearly.
               </span>
             </h2>
           </div>
 
-          {/* Right intro */}
           <div className="lg:pb-1 lg:pl-8">
             <p className="max-w-lg text-[13px] leading-7 text-[#647180] sm:text-[14px]">
-              Find general information about the website, legal resources,
-              professional enquiries and the nature of information provided
-              through this platform.
+              Learn more about our legal practice areas, documentation,
+              consultations, and the types of legal assistance available
+              through V&P Advocates and Notary in Ahmedabad.
             </p>
 
             <div className="mt-5 flex items-center gap-3">
@@ -119,29 +120,23 @@ export default function FAQPreview() {
               />
 
               <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#8993A0]">
-                General Information
+                General Legal Information
               </span>
             </div>
           </div>
         </motion.div>
 
-        {/* =======================================================
-            MAIN FAQ AREA
-        ======================================================= */}
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:mt-14">
-          {/* =====================================================
-              LEFT INFORMATION PANEL
-          ===================================================== */}
-
+        {/* Main FAQ Area */}
+        <div className="mt-12 grid gap-6 lg:mt-14 lg:grid-cols-[0.72fr_1.28fr]">
+          {/* Left Information Panel */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.65 }}
-            className="relative overflow-hidden bg-[#0E2238] p-8 text-white sm:p-9 lg:p-10"
+            className="relative overflow-hidden bg-[#0E2238] p-7 text-white sm:p-9 lg:p-10"
           >
-            {/* Grid */}
+            {/* Decorative Background */}
             <div
               className="pointer-events-none absolute inset-0 opacity-[0.035]"
               style={{
@@ -151,10 +146,8 @@ export default function FAQPreview() {
               }}
             />
 
-            {/* Gold glow */}
             <div className="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full bg-[#C9A45C]/[0.05] blur-2xl" />
 
-            {/* Decorative circles */}
             <div className="pointer-events-none absolute -bottom-24 -right-24 h-56 w-56 rounded-full border border-[#C9A45C]/10" />
 
             <div className="relative z-10 flex h-full flex-col">
@@ -168,57 +161,57 @@ export default function FAQPreview() {
               </div>
 
               {/* Heading */}
-              <h3 className="mt-9 max-w-sm font-serif text-[34px] leading-[1.05] text-[#FAF8F3] sm:text-[39px]">
-                Need more
+              <h3 className="mt-8 max-w-sm font-serif text-[32px] leading-[1.08] text-[#FAF8F3] sm:text-[38px]">
+                Need guidance with
                 <span className="block text-[#C9A45C]">
-                  information?
+                  a legal matter?
                 </span>
               </h3>
 
               <p className="mt-5 max-w-sm text-[12px] leading-6 text-[#AEB9C5]">
-                The answers provided here are general in nature. A specific
-                legal matter may require consideration of its individual facts,
-                documents and applicable law.
+                Every legal matter has its own facts and requirements.
+                Understanding your circumstances and reviewing relevant
+                documents can help identify the appropriate next steps.
               </p>
 
-              {/* Divider */}
               <div className="mt-8 h-px bg-white/10" />
 
-              {/* Information points */}
+              {/* Information Points */}
               <div className="mt-7 space-y-5">
                 <div className="flex items-start gap-3">
                   <Scale
-                    size={15}
+                    size={16}
                     strokeWidth={1.3}
                     className="mt-0.5 shrink-0 text-[#C9A45C]"
                   />
 
                   <div>
                     <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#E4CC98]">
-                      General Legal Information
+                      Legal Practice Areas
                     </p>
 
-                    <p className="mt-1 text-[9px] leading-5 text-[#718291]">
-                      Explore educational resources and selected legal topics.
+                    <p className="mt-1 text-[10px] leading-5 text-[#AEB9C5]">
+                      Explore civil, criminal, property, family, and other
+                      legal practice areas.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <ShieldCheck
-                    size={15}
+                    size={16}
                     strokeWidth={1.3}
                     className="mt-0.5 shrink-0 text-[#C9A45C]"
                   />
 
                   <div>
                     <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#E4CC98]">
-                      Professional Information
+                      Clear Communication
                     </p>
 
-                    <p className="mt-1 text-[9px] leading-5 text-[#718291]">
-                      Review professional details and appropriate contact
-                      pathways.
+                    <p className="mt-1 text-[10px] leading-5 text-[#AEB9C5]">
+                      Share the nature of your matter and the relevant
+                      information through the available contact channels.
                     </p>
                   </div>
                 </div>
@@ -227,10 +220,10 @@ export default function FAQPreview() {
               {/* CTA */}
               <div className="mt-auto pt-9">
                 <Link
-                  href="/faqs"
+                  href="/contact"
                   className="group inline-flex items-center gap-3 border-b border-[#C9A45C] pb-2 text-[9px] font-bold uppercase tracking-[0.17em] text-white transition-colors hover:text-[#E4CC98]"
                 >
-                  View All FAQs
+                  Contact the Firm
 
                   <ArrowUpRight
                     size={14}
@@ -242,13 +235,11 @@ export default function FAQPreview() {
             </div>
           </motion.div>
 
-          {/* =====================================================
-              FAQ ACCORDION
-          ===================================================== */}
-
+          {/* FAQ Accordion */}
           <div className="border-t border-[#E7E1D6]">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
+              const answerId = `faq-answer-${faq.number}`;
 
               return (
                 <motion.div
@@ -266,7 +257,8 @@ export default function FAQPreview() {
                     type="button"
                     onClick={() => toggleFAQ(index)}
                     aria-expanded={isOpen}
-                    className="group flex w-full items-start gap-5 py-6 text-left sm:gap-7 sm:py-7"
+                    aria-controls={answerId}
+                    className="group flex w-full items-start gap-4 py-5 text-left sm:gap-6 sm:py-6"
                   >
                     {/* Number */}
                     <span
@@ -279,11 +271,11 @@ export default function FAQPreview() {
                       {faq.number}
                     </span>
 
-                    {/* Question */}
+                    {/* Question and Answer */}
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-start justify-between gap-5">
+                      <div className="flex items-start justify-between gap-4">
                         <h3
-                          className={`pr-4 font-serif text-[22px] leading-[1.2] transition-colors duration-300 sm:text-[25px] ${
+                          className={`pr-2 font-serif text-[19px] leading-[1.3] transition-colors duration-300 sm:text-[22px] ${
                             isOpen
                               ? "text-[#A98543]"
                               : "text-[#0E2238] group-hover:text-[#A98543]"
@@ -292,8 +284,9 @@ export default function FAQPreview() {
                           {faq.question}
                         </h3>
 
-                        {/* Plus / minus */}
+                        {/* Plus / Minus */}
                         <span
+                          aria-hidden="true"
                           className={`relative mt-1 flex h-7 w-7 shrink-0 items-center justify-center border transition-all duration-300 ${
                             isOpen
                               ? "border-[#C9A45C] bg-[#C9A45C]"
@@ -302,9 +295,7 @@ export default function FAQPreview() {
                         >
                           <span
                             className={`absolute h-px w-3 transition-colors ${
-                              isOpen
-                                ? "bg-[#0E2238]"
-                                : "bg-[#A98543]"
+                              isOpen ? "bg-[#0E2238]" : "bg-[#A98543]"
                             }`}
                           />
 
@@ -318,8 +309,9 @@ export default function FAQPreview() {
                         </span>
                       </div>
 
-                      {/* Answer */}
+                      {/* Animated Answer */}
                       <motion.div
+                        id={answerId}
                         initial={false}
                         animate={{
                           height: isOpen ? "auto" : 0,
@@ -331,7 +323,7 @@ export default function FAQPreview() {
                         }}
                         className="overflow-hidden"
                       >
-                        <p className="max-w-2xl pt-4 pr-8 text-[12px] leading-6 text-[#647180] sm:text-[13px] sm:leading-7">
+                        <p className="max-w-2xl pt-4 pr-4 text-[12px] leading-6 text-[#647180] sm:pr-8 sm:text-[13px] sm:leading-7">
                           {faq.answer}
                         </p>
                       </motion.div>
@@ -343,10 +335,7 @@ export default function FAQPreview() {
           </div>
         </div>
 
-        {/* =======================================================
-            BOTTOM BAR
-        ======================================================= */}
-
+        {/* Bottom Information Bar */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -354,7 +343,6 @@ export default function FAQPreview() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-10 grid gap-6 border-t border-[#E7E1D6] pt-6 lg:grid-cols-[1fr_auto]"
         >
-          {/* Information */}
           <div className="flex items-start gap-3">
             <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center bg-[#FBF7ED]">
               <HelpCircle
@@ -366,22 +354,22 @@ export default function FAQPreview() {
 
             <div>
               <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#0E2238]">
-                Frequently Asked Questions
+                V&P Advocates and Notary
               </p>
 
               <p className="mt-1 max-w-2xl text-[10px] leading-5 text-[#8993A0]">
-                FAQs are intended to provide general information and should be
-                reviewed for accuracy and currency before publication.
+                These answers provide general information. The appropriate
+                legal procedure depends on the facts, documents, applicable
+                law, and circumstances of each matter.
               </p>
             </div>
           </div>
 
-          {/* CTA */}
           <Link
-            href="/faqs"
+            href="/practice-areas"
             className="group inline-flex items-center gap-3 self-center text-[10px] font-bold uppercase tracking-[0.17em] text-[#0E2238]"
           >
-            Explore All Questions
+            Explore Practice Areas
 
             <ArrowRight
               size={16}
@@ -391,12 +379,7 @@ export default function FAQPreview() {
           </Link>
         </motion.div>
 
-        {/* Disclaimer */}
-        <p className="mt-6 max-w-3xl text-[8px] leading-5 text-[#8993A0]">
-          FAQ content is provided for general informational purposes only and
-          does not constitute legal advice or create an advocate-client
-          relationship.
-        </p>
+  
       </div>
     </section>
   );

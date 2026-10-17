@@ -97,7 +97,7 @@ export default function ProfessionalIntro() {
                 </div>
 
                 <span className="font-serif text-2xl text-[#C9A45C]">
-                  P.V.
+                  V&P
                 </span>
               </div>
 
@@ -140,15 +140,15 @@ export default function ProfessionalIntro() {
                 {/* Image label */}
                 <div className="absolute bottom-7 left-7">
                   <p className="text-[8px] font-bold uppercase tracking-[0.3em] text-[#C9A45C]">
-                    Professional Profile
+                    Our Legal Practice
                   </p>
 
                   <p className="mt-2 font-serif text-3xl text-[#FAF8F3]">
-                    Parthiv Vyas
+                    V&P Advocates and Notary
                   </p>
 
                   <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-[#9BA9B5]">
-                    Advocate • Ahmedabad
+                    Legal Representation · Advisory · Documentation
                   </p>
                 </div>
               </div>
@@ -168,11 +168,11 @@ export default function ProfessionalIntro() {
 
                   <div>
                     <p className="text-[8px] uppercase tracking-[0.2em] text-[#718291]">
-                      Professional
+                      Practice
                     </p>
 
                     <p className="mt-1 text-[11px] font-medium text-[#F5F1E8]">
-                      Advocate
+                      Litigation & Legal Services
                     </p>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function ProfessionalIntro() {
               <span className="h-px w-10 bg-[#C9A45C]" />
 
               <span className="text-[10px] font-bold uppercase tracking-[0.27em] text-[#A98543]">
-                About the Advocate
+                V&P Advocates and Notary
               </span>
             </div>
 
@@ -211,18 +211,12 @@ export default function ProfessionalIntro() {
 
             {/* Intro */}
             <p className="mt-7 max-w-2xl text-[15px] leading-7 text-[#647180]">
-              Advocate Parthiv Vyas is presented through a professional
-              platform designed to make information about legal practice,
-              professional background and legal resources easier to understand
-              and navigate.
+              V&P Advocates and Notary is a legal practice based in Ahmedabad, Gujarat, providing assistance across litigation, property and revenue disputes, family matters, commercial disputes, tribunal proceedings, legal drafting, and notary services.
             </p>
 
             {/* Second paragraph */}
             <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[#647180]">
-              The practice profile can include verified information concerning
-              education, professional experience, enrolment, areas of practice
-              and the legal forums or authorities relevant to the advocate's
-              work. Final details should be confirmed before publication.
+              We believe that effective legal assistance begins with understanding the matter, examining the relevant documents, and explaining the available legal options clearly. Our approach emphasizes careful preparation, professional responsibility, confidentiality, and clear communication throughout the legal process.
             </p>
 
             {/* =================================================
@@ -245,11 +239,11 @@ export default function ProfessionalIntro() {
                 </div>
 
                 <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.15em] text-[#0E2238]">
-                  Experience
+                  Legal Representation
                 </p>
 
                 <p className="mt-2 text-[10px] leading-5 text-[#8993A0]">
-                  Professional experience and career details.
+                  Assistance with civil, criminal, property, family, and commercial disputes, subject to the firm's practice and jurisdiction.
                 </p>
               </div>
 
@@ -268,11 +262,11 @@ export default function ProfessionalIntro() {
                 </div>
 
                 <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.15em] text-[#0E2238]">
-                  Education
+                  Legal Drafting & Documentation
                 </p>
 
                 <p className="mt-2 text-[10px] leading-5 text-[#8993A0]">
-                  Academic and professional qualifications.
+                  Preparation and review of agreements, contracts, sale deeds, affidavits, and other legal documents.
                 </p>
               </div>
 
@@ -291,11 +285,11 @@ export default function ProfessionalIntro() {
                 </div>
 
                 <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.15em] text-[#0E2238]">
-                  Practice
+                  Professional Responsibility
                 </p>
 
                 <p className="mt-2 text-[10px] leading-5 text-[#8993A0]">
-                  Confirmed areas of legal practice.
+                  A focus on careful preparation, clear explanations, discretion, and responsible legal assistance.
                 </p>
               </div>
             </div>
@@ -316,11 +310,11 @@ export default function ProfessionalIntro() {
 
                   <div>
                     <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#0E2238]">
-                      Professional Profile
+                      Legal Practice
                     </p>
 
                     <p className="mt-1 text-[10px] leading-4 text-[#8993A0]">
-                      Verified advocate information
+                      Litigation, Advisory & Documentation
                     </p>
                   </div>
                 </div>
@@ -370,7 +364,7 @@ export default function ProfessionalIntro() {
               href="/about"
               className="group mt-8 inline-flex items-center gap-3 border-b border-[#C9A45C] pb-2.5 text-[10px] font-bold uppercase tracking-[0.17em] text-[#0E2238] transition-colors hover:text-[#A98543]"
             >
-              View Professional Profile
+              Learn More About the Firm
 
               <ArrowUpRight
                 size={15}

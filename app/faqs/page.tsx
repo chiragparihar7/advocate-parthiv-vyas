@@ -1,34 +1,17 @@
+
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
   HelpCircle,
-  Mail,
   MessageCircle,
-  Phone,
   Scale,
+  ShieldCheck,
 } from "lucide-react";
-
-/*
-  NOTE:
-  Next.js does not allow exporting Metadata from a "use client" page.
-  If your Next.js version requires metadata in a Server Component,
-  move the metadata object to a separate layout.tsx or remove "use client"
-  and extract only the accordion into a small client component.
-
-  For the current single-file implementation, the metadata object below
-  is provided as a reference and should be moved if your build reports
-  the client/server metadata restriction.
-*/
-
-// =========================================================
-// FAQ DATA
-// =========================================================
 
 type FAQ = {
   question: string;
@@ -49,22 +32,22 @@ const faqs: FAQ[] = [
   {
     question: "What information should I prepare before discussing a legal matter?",
     answer:
-      "Where relevant, it can be useful to have a clear summary of the circumstances, important dates and documents connected with the matter. The information required will depend on the nature of the legal issue.",
+      "Where relevant, it can be useful to have a clear summary of the circumstances, important dates and documents connected with the matter. These may include agreements, legal notices, property records, court documents or relevant correspondence. The information required depends on the nature of the legal issue.",
   },
   {
     question: "What types of matters may require legal assistance?",
     answer:
-      "Legal assistance may be relevant to a wide range of civil, criminal, property, documentation and other legal matters. The appropriate legal approach depends on the nature and circumstances of the particular issue.",
+      "The firm's listed practice areas include civil litigation, criminal law, family and matrimonial disputes, land, property and revenue disputes, cheque bounce cases, contract law and commercial disputes, cyber law, preventive detention under PASA, labour and employment law, tribunal practice, legal drafting and notary services. The availability of assistance for a particular matter should be confirmed with the office.",
   },
   {
     question: "Why are documents important in a legal matter?",
     answer:
-      "Documents can help establish relevant facts, understand the background of a matter and identify the legal or procedural issues that may need to be considered. The importance of particular documents varies according to the matter.",
+      "Documents can help establish relevant facts, understand the background of a matter and identify legal or procedural issues that may need to be considered. The importance of particular documents varies according to the nature of the matter.",
   },
   {
     question: "Does every legal matter follow the same process?",
     answer:
-      "No. The process can differ depending on the nature of the matter, applicable law, jurisdiction, documents, procedural requirements and other relevant circumstances.",
+      "No. The process can differ depending on the nature of the matter, applicable law, jurisdiction, available documents, procedural requirements and other relevant circumstances.",
   },
   {
     question: "Can I understand my legal position from information on this website?",
@@ -74,23 +57,19 @@ const faqs: FAQ[] = [
   {
     question: "How can I make a legal enquiry?",
     answer:
-      "You can use the contact options provided on the website to submit an appropriate professional enquiry. Where possible, provide a concise description of the matter and relevant basic information without sharing unnecessary confidential or sensitive information through a general enquiry form.",
+      "You can use the contact options provided on the website to submit a professional enquiry. Where possible, provide a concise description of the matter and relevant basic information. Avoid sharing unnecessary confidential or sensitive information through a general enquiry form.",
   },
   {
     question: "Can I request an appointment?",
     answer:
-      "Appointment requests can be made through the appropriate contact route provided on the website. Availability and the appropriate consultation process may depend on the circumstances and professional schedule.",
+      "You can submit an appointment request through the contact options provided on the website. Appointment availability and the appropriate consultation process should be confirmed with the office.",
   },
   {
     question: "Where does Advocate Parthiv Vyas practise?",
     answer:
-      "The website is intended to provide professional information relating to Advocate Parthiv Vyas and the approved professional practice location. Please refer to the Contact or Location information on the website for the current verified details.",
+      "This website provides professional information about Advocate Parthiv Vyas and V&P Advocates and Notary in Ahmedabad, Gujarat. Please refer to the Contact page for the current verified office location and available contact details.",
   },
 ];
-
-// =========================================================
-// PAGE
-// =========================================================
 
 export default function FAQsPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -100,41 +79,51 @@ export default function FAQsPage() {
   };
 
   return (
-    <main className="bg-[#faf8f3] text-[#1d2935]">
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+    <main className="bg-[#FAF8F3] text-[#1D2935]">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-[#0E2238] text-white">
+        {/* Decorative Elements */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full border border-[#C9A45C]/10"
+        />
 
-      <section className="relative overflow-hidden bg-[#0e2238] text-white">
-        {/* Decorative rings */}
-        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full border border-[#c9a45c]/10" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 top-10 h-56 w-56 rounded-full border border-[#C9A45C]/10"
+        />
 
-        <div className="pointer-events-none absolute -right-16 top-10 h-56 w-56 rounded-full border border-[#c9a45c]/10" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-[#193750]/40 blur-3xl"
+        />
 
-        <div className="pointer-events-none absolute bottom-[-120px] left-[-80px] h-72 w-72 rounded-full bg-[#193750]/40 blur-3xl" />
-
-        <div className="relative mx-auto max-w-[1280px] px-6 py-10 sm:px-8 lg:px-10 sm:py-12 lg:py-14">
+        <div className="relative mx-auto max-w-[1280px] px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-16">
           {/* Breadcrumb */}
           <motion.nav
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
             aria-label="Breadcrumb"
-            className="mb-10 flex items-center gap-2 text-sm"
+            className="mb-10 flex items-center gap-2 text-xs sm:text-sm"
           >
             <Link
               href="/"
-              className="!text-white/50 transition-colors duration-200 hover:!text-[#e4cc98]"
+              className="text-white/60 transition-colors hover:text-[#E4CC98]"
             >
               Home
             </Link>
 
-            <span className="text-[#c9a45c]">/</span>
+            <span aria-hidden="true" className="text-[#C9A45C]">
+              /
+            </span>
 
-            <span className="text-white/80">FAQs</span>
+            <span aria-current="page" className="text-white/90">
+              FAQs
+            </span>
           </motion.nav>
 
-          <div className="grid items-end gap-12 lg:grid-cols-[1fr_340px]">
+          <div className="grid items-end gap-12 lg:grid-cols-[1fr_320px]">
             {/* Main Hero Content */}
             <div className="max-w-4xl">
               <motion.div
@@ -143,9 +132,9 @@ export default function FAQsPage() {
                 transition={{ duration: 0.5 }}
                 className="mb-5 flex items-center gap-3"
               >
-                <span className="h-px w-10 bg-[#c9a45c]" />
+                <span className="h-px w-10 bg-[#C9A45C]" />
 
-                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#e4cc98]">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#E4CC98]">
                   Legal Knowledge
                 </span>
               </motion.div>
@@ -154,10 +143,10 @@ export default function FAQsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.08 }}
-                className="max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.025em] text-[#faf8f3] sm:text-6xl lg:text-7xl"
+                className="max-w-4xl font-serif text-5xl leading-[1.02] tracking-[-0.025em] text-[#FAF8F3] sm:text-6xl lg:text-7xl"
               >
                 Legal questions,
-                <span className="block text-[#c9a45c]">
+                <span className="block text-[#C9A45C]">
                   explained clearly.
                 </span>
               </motion.h1>
@@ -166,7 +155,7 @@ export default function FAQsPage() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.16 }}
-                className="mt-7 max-w-2xl text-[16px] leading-8 text-white/65 sm:text-[17px]"
+                className="mt-7 max-w-2xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8"
               >
                 Find general information about common legal questions,
                 procedures, documentation and professional enquiries.
@@ -176,60 +165,64 @@ export default function FAQsPage() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.26 }}
-                className="mt-9 flex flex-wrap gap-3"
+                className="mt-8 flex flex-wrap gap-3"
               >
                 <Link
                   href="#faqs"
-                  className="group inline-flex items-center gap-2 rounded-md bg-[#c9a45c] px-5 py-3 text-sm font-semibold !text-[#0e2238] transition-all duration-300 hover:bg-[#e4cc98]"
+                  className="group inline-flex items-center gap-2 rounded-sm bg-[#C9A45C] px-5 py-3 text-xs font-semibold !text-[#081725] transition-colors duration-300 hover:bg-[#E4CC98]"
                 >
-                  Browse Questions
+                  <span className="!text-[#081725]">
+                    Browse Questions
+                  </span>
+
                   <ArrowRight
                     size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden="true"
+                    className="!text-[#081725] transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-md border border-white/20 px-5 py-3 text-sm font-semibold !text-white transition-all duration-300 hover:border-[#c9a45c]/60 hover:bg-white/5"
+                  className="inline-flex items-center gap-2 rounded-sm border border-white/20 px-5 py-3 text-xs font-semibold !text-white transition-all duration-300 hover:border-[#C9A45C]/60 hover:bg-white/5"
                 >
-                  Contact
+                  Contact the Office
                 </Link>
               </motion.div>
             </div>
 
             {/* Hero Side Panel */}
-            <motion.div
+            <motion.aside
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.18 }}
-              className="border-l border-white/10 pl-6 lg:pb-2"
+              className="border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pb-2 lg:pl-6 lg:pt-0"
             >
               <div className="mb-7">
-                <div className="mb-3 flex h-11 w-11 items-center justify-center border border-[#c9a45c]/40 text-[#e4cc98]">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center border border-[#C9A45C]/40 text-[#E4CC98]">
                   <HelpCircle size={20} strokeWidth={1.5} />
                 </div>
 
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c9a45c]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9A45C]">
                   Frequently Asked Questions
                 </p>
 
-                <p className="mt-3 text-sm leading-7 text-white/55">
-                  General information designed to help visitors understand
-                  common legal concepts and website processes.
+                <p className="mt-3 text-sm leading-7 text-white/60">
+                  General information to help visitors understand common
+                  legal concepts and website processes.
                 </p>
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="font-serif text-3xl text-[#c9a45c]">
+                <span className="font-serif text-3xl text-[#C9A45C]">
                   {String(faqs.length).padStart(2, "0")}
                 </span>
 
-                <span className="text-xs uppercase tracking-[0.16em] text-white/35">
+                <span className="text-xs uppercase tracking-[0.16em] text-white/50">
                   Questions
                 </span>
               </div>
-            </motion.div>
+            </motion.aside>
           </div>
 
           {/* Bottom Meta */}
@@ -237,29 +230,26 @@ export default function FAQsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.38 }}
-            className="mt-14 flex items-center gap-4 border-t border-white/10 pt-5"
+            className="mt-12 flex items-center gap-4 border-t border-white/10 pt-5 sm:mt-14"
           >
-            <span className="font-serif text-2xl text-[#c9a45c]">
+            <span className="font-serif text-2xl text-[#C9A45C]">
               01
             </span>
 
             <span className="h-px w-10 bg-white/20" />
 
-            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
-              Legal FAQs & General Information
+            <span className="text-[9px] uppercase tracking-[0.2em] text-white/50 sm:text-[10px]">
+              Legal FAQs &amp; General Information
             </span>
           </motion.div>
         </div>
       </section>
 
-      {/* =====================================================
-          INTRODUCTION
-      ===================================================== */}
-
-      <section className="bg-[#faf8f3]">
-        <div className="mx-auto max-w-[1280px] px-6 py-14 sm:px-8 lg:px-10 lg:py-18">
+      {/* Introduction Section */}
+      <section className="bg-[#FAF8F3]">
+        <div className="mx-auto max-w-[1280px] px-6 py-14 sm:px-8 lg:px-10 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-            {/* Label */}
+            {/* Introduction Label */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -267,38 +257,38 @@ export default function FAQsPage() {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#c9a45c]/40 text-[#a98543]">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C9A45C]/40 text-[#A98543]">
                   <Scale size={17} strokeWidth={1.5} />
                 </span>
 
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#a98543]">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A98543]">
                     Understanding Legal Questions
                   </p>
 
-                  <p className="mt-1 text-xs text-[#8993a0]">
+                  <p className="mt-1 text-xs text-[#8993A0]">
                     General information
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Intro Content */}
+            {/* Introduction Content */}
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="max-w-3xl font-serif text-4xl leading-[1.08] tracking-[-0.02em] text-[#0e2238] sm:text-5xl">
+              <h2 className="max-w-3xl font-serif text-4xl leading-[1.08] tracking-[-0.02em] text-[#0E2238] sm:text-5xl">
                 Useful answers begin with
-                <span className="text-[#a98543]">
+                <span className="text-[#A98543]">
                   {" "}
                   the right context.
                 </span>
               </h2>
 
-              <div className="mt-6 max-w-3xl space-y-4 text-[15px] leading-8 text-[#647180] sm:text-base">
+              <div className="mt-6 max-w-3xl space-y-4 text-sm leading-8 text-[#647180] sm:text-base">
                 <p>
                   Legal questions often depend on the facts, documents,
                   applicable law and circumstances of an individual matter.
@@ -317,15 +307,9 @@ export default function FAQsPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          FAQ ACCORDION
-      ===================================================== */}
-
-      <section
-        id="faqs"
-        className="scroll-mt-20 bg-white"
-      >
-        <div className="mx-auto max-w-[1000px] px-6 py-16 sm:px-8 lg:py-20">
+      {/* FAQ Accordion */}
+      <section id="faqs" className="scroll-mt-20 bg-white">
+        <div className="mx-auto max-w-[1000px] px-6 py-14 sm:px-8 sm:py-16 lg:py-20">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -335,28 +319,30 @@ export default function FAQsPage() {
             className="mb-10"
           >
             <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-9 bg-[#c9a45c]" />
+              <span className="h-px w-9 bg-[#C9A45C]" />
 
-              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#a98543]">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A98543]">
                 Frequently Asked Questions
               </span>
             </div>
 
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-              <h2 className="font-serif text-4xl leading-tight tracking-[-0.02em] text-[#0e2238] sm:text-5xl">
+              <h2 className="font-serif text-4xl leading-tight tracking-[-0.02em] text-[#0E2238] sm:text-5xl">
                 Common legal questions.
               </h2>
 
-              <p className="max-w-sm text-sm leading-6 text-[#8993a0]">
+              <p className="max-w-sm text-sm leading-6 text-[#8993A0]">
                 Select a question to read the general information provided.
               </p>
             </div>
           </motion.div>
 
-          {/* Accordion */}
-          <div className="border-y border-[#e7e1d6]">
+          {/* Accordion Items */}
+          <div className="border-y border-[#E7E1D6]">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
+              const answerId = `faq-answer-${index}`;
+              const buttonId = `faq-question-${index}`;
 
               return (
                 <motion.div
@@ -368,51 +354,57 @@ export default function FAQsPage() {
                     duration: 0.4,
                     delay: Math.min(index * 0.025, 0.2),
                   }}
-                  className="border-b border-[#e7e1d6] last:border-b-0"
+                  className="border-b border-[#E7E1D6] last:border-b-0"
                 >
-                  <button
-                    type="button"
-                    onClick={() => toggleFAQ(index)}
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${index}`}
-                    className="group flex w-full items-center justify-between gap-6 py-5 text-left"
-                  >
-                    <span className="flex min-w-0 items-start gap-4">
-                      <span className="mt-0.5 shrink-0 font-serif text-sm text-[#c9a45c]">
-                        {String(index + 1).padStart(2, "0")}
+                  <h3>
+                    <button
+                      id={buttonId}
+                      type="button"
+                      onClick={() => toggleFAQ(index)}
+                      aria-expanded={isOpen}
+                      aria-controls={answerId}
+                      className="group flex w-full items-center justify-between gap-4 py-5 text-left sm:gap-6"
+                    >
+                      <span className="flex min-w-0 items-start gap-4">
+                        <span className="mt-1 shrink-0 font-serif text-sm text-[#C9A45C]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <span
+                          className={`font-serif text-base leading-7 transition-colors duration-200 sm:text-xl ${
+                            isOpen
+                              ? "text-[#A98543]"
+                              : "text-[#0E2238] group-hover:text-[#A98543]"
+                          }`}
+                        >
+                          {faq.question}
+                        </span>
                       </span>
 
                       <span
-                        className={`font-serif text-lg leading-7 transition-colors duration-200 sm:text-xl ${
+                        aria-hidden="true"
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                           isOpen
-                            ? "text-[#a98543]"
-                            : "text-[#0e2238] group-hover:text-[#a98543]"
+                            ? "border-[#C9A45C] bg-[#0E2238] text-[#E4CC98]"
+                            : "border-[#E7E1D6] text-[#647180] group-hover:border-[#C9A45C]/60"
                         }`}
                       >
-                        {faq.question}
+                        <ChevronDown
+                          size={17}
+                          className={`transition-transform duration-300 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
                       </span>
-                    </span>
-
-                    <span
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                        isOpen
-                          ? "border-[#c9a45c] bg-[#0e2238] text-[#e4cc98]"
-                          : "border-[#e7e1d6] text-[#647180] group-hover:border-[#c9a45c]/60"
-                      }`}
-                    >
-                      <ChevronDown
-                        size={17}
-                        className={`transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </span>
-                  </button>
+                    </button>
+                  </h3>
 
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
-                        id={`faq-answer-${index}`}
+                        id={answerId}
+                        role="region"
+                        aria-labelledby={buttonId}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -422,8 +414,8 @@ export default function FAQsPage() {
                         }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-6 pl-10 pr-10 sm:pl-12 sm:pr-16">
-                          <div className="border-l-2 border-[#c9a45c] pl-5">
+                        <div className="pb-6 pl-9 pr-1 sm:pl-12 sm:pr-16">
+                          <div className="border-l-2 border-[#C9A45C] pl-5">
                             <p className="text-sm leading-7 text-[#647180] sm:text-[15px]">
                               {faq.answer}
                             </p>
@@ -439,26 +431,23 @@ export default function FAQsPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          PROFESSIONAL DISCLAIMER
-      ===================================================== */}
-
-      <section className="bg-[#f5f2eb]">
+      {/* Professional Disclaimer */}
+      <section className="bg-[#F5F2EB]">
         <div className="mx-auto max-w-[1000px] px-6 py-12 sm:px-8 lg:py-14">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="border border-[#e7e1d6] bg-[#fbf7ed] p-6 sm:p-7"
+            className="border border-[#E7E1D6] bg-[#FBF7ED] p-6 sm:p-7"
           >
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#0e2238] text-[#e4cc98]">
-                <Scale size={17} strokeWidth={1.5} />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#0E2238] text-[#E4CC98]">
+                <ShieldCheck size={18} strokeWidth={1.5} />
               </div>
 
               <div>
-                <h2 className="font-serif text-xl text-[#0e2238]">
+                <h2 className="font-serif text-xl text-[#0E2238]">
                   Important information
                 </h2>
 
@@ -471,29 +460,33 @@ export default function FAQsPage() {
                   legal advice for a specific matter.
                 </p>
 
-                <p className="mt-3 text-xs leading-6 text-[#8993a0]">
-                  Website information should be reviewed against the
-                  circumstances of the particular matter and applicable
-                  law. Final disclaimer wording should be reviewed and
-                  approved before publication.
-                </p>
+                <Link
+                  href="/disclaimer"
+                  className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#A98543] transition-colors hover:text-[#0E2238]"
+                >
+                  Read Full Disclaimer
+                  <ArrowRight size={14} />
+                </Link>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* =====================================================
-          CONTACT CTA
-      ===================================================== */}
+      {/* Contact CTA */}
+      <section className="relative overflow-hidden bg-[#0E2238] text-white">
+        {/* Decorative Elements */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-[#C9A45C]/10"
+        />
 
-      <section className="relative overflow-hidden bg-[#0e2238] text-white">
-        {/* Decorative elements */}
-        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-[#c9a45c]/10" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-8 top-8 h-48 w-48 rounded-full border border-[#C9A45C]/10"
+        />
 
-        <div className="pointer-events-none absolute -right-8 top-8 h-48 w-48 rounded-full border border-[#c9a45c]/10" />
-
-        <div className="relative mx-auto max-w-[1280px] px-6 py-16 sm:px-8 lg:px-10 lg:py-20">
+        <div className="relative mx-auto max-w-[1280px] px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
             {/* CTA Content */}
             <motion.div
@@ -503,24 +496,25 @@ export default function FAQsPage() {
               transition={{ duration: 0.55 }}
             >
               <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-9 bg-[#c9a45c]" />
+                <span className="h-px w-9 bg-[#C9A45C]" />
 
-                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#e4cc98]">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E4CC98]">
                   Still Have a Question?
                 </span>
               </div>
 
-              <h2 className="max-w-3xl font-serif text-4xl leading-tight tracking-[-0.02em] sm:text-5xl">
-                Discuss your enquiry through the
-                <span className="text-[#c9a45c]">
+              <h2 className="max-w-3xl font-serif text-4xl leading-tight tracking-[-0.02em] text-[#FAF8F3] sm:text-5xl">
+                Make your enquiry through the
+                <span className="text-[#C9A45C]">
                   {" "}
                   appropriate contact route.
                 </span>
               </h2>
 
-              <p className="mt-5 max-w-2xl text-sm leading-7 text-white/60 sm:text-base">
-                If your question is not addressed here, you can use the
-                appropriate professional contact route to make an enquiry.
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-white/65 sm:text-base">
+                If your question is not addressed here, use the contact
+                options available on the website to make an enquiry about
+                your circumstances.
               </p>
             </motion.div>
 
@@ -534,43 +528,44 @@ export default function FAQsPage() {
             >
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-md bg-[#c9a45c] px-6 py-3.5 text-sm font-semibold !text-[#0e2238] transition-all duration-300 hover:bg-[#e4cc98]"
+                className="group inline-flex items-center justify-center gap-2 rounded-sm bg-[#C9A45C] px-6 py-3.5 text-sm font-semibold !text-[#081725] transition-colors duration-300 hover:bg-[#E4CC98]"
               >
-                <MessageCircle size={17} />
+                <MessageCircle
+                  size={17}
+                  aria-hidden="true"
+                  className="!text-[#081725]"
+                />
 
-                Contact
+                <span className="!text-[#081725]">Contact the Office</span>
 
                 <ArrowRight
                   size={16}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                  className="!text-[#081725] transition-transform duration-300 group-hover:translate-x-1"
                 />
               </Link>
 
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 px-6 py-3.5 text-sm font-semibold !text-white transition-all duration-300 hover:border-[#c9a45c]/60 hover:bg-white/5"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/20 px-6 py-3.5 text-sm font-semibold !text-white transition-all duration-300 hover:border-[#C9A45C]/60 hover:bg-white/5"
               >
-                <Scale size={17} />
+                <Scale size={17} aria-hidden="true" />
 
-                Practice Areas
+                <span>Practice Areas</span>
               </Link>
             </motion.div>
           </div>
 
-          {/* Bottom note */}
+          {/* Bottom Note */}
           <div className="mt-12 border-t border-white/10 pt-5">
-            <div className="flex flex-col gap-2 text-[11px] leading-6 text-white/35 sm:flex-row sm:items-center sm:justify-between">
-              <span>
-                Advocate Parthiv Vyas · Ahmedabad, Gujarat
-              </span>
+            <div className="flex flex-col gap-2 text-[10px] leading-6 text-white/50 sm:flex-row sm:items-center sm:justify-between">
+              <span>V&amp;P Advocates and Notary · Ahmedabad, Gujarat</span>
 
-              <span>
-                General information only · Not legal advice
-              </span>
+              <span>General information only · Not legal advice</span>
             </div>
           </div>
         </div>
       </section>
     </main>
   );
-}   
+}

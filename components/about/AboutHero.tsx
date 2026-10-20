@@ -174,3 +174,6 @@ export default function AboutHero() {
     </section>
   );
 }
+
+
+// UpdATED THE CODE 

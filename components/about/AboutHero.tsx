@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -62,11 +62,7 @@ export default function AboutHero() {
             transition={{ duration: 0.7 }}
           >
             <div className="mb-5 flex items-center gap-3">
-              <Scale
-                size={16}
-                strokeWidth={1.4}
-                className="text-[#C9A45C]"
-              />
+              <Scale size={16} strokeWidth={1.4} className="text-[#C9A45C]" />
 
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C9A45C]">
                 V&P Advocates and Notary
@@ -81,16 +77,15 @@ export default function AboutHero() {
             </h1>
 
             <p className="mt-7 max-w-xl text-[13px] leading-7 text-[#B4C0CB] sm:text-[15px]">
-              Explore the professional approach of Advocate Parthiv Vyas
-              and the legal services offered through V&P Advocates and
-              Notary in Ahmedabad, Gujarat.
+              Explore the professional approach of Advocate Parthiv Vyas and the
+              legal services offered through V&P Advocates and Notary in
+              Ahmedabad, Gujarat.
             </p>
 
             <p className="mt-4 max-w-xl text-[12px] leading-7 text-[#91A1AE] sm:text-[13px]">
-              From disputes and property-related matters to legal drafting
-              and notary services, each enquiry calls for careful
-              consideration of the relevant facts, documents and applicable
-              legal procedures.
+              From disputes and property-related matters to legal drafting and
+              notary services, each enquiry calls for careful consideration of
+              the relevant facts, documents and applicable legal procedures.
             </p>
 
             {/* Action Buttons */}
@@ -99,9 +94,7 @@ export default function AboutHero() {
                 href="/practice-areas"
                 className="group inline-flex items-center justify-center gap-3 bg-[#C9A45C] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.15em] !text-[#081725] opacity-100 transition-colors duration-300 hover:bg-[#E4CC98]"
               >
-                <span className="!text-[#081725]">
-                  Explore Practice Areas
-                </span>
+                <span className="!text-[#081725]">Explore Practice Areas</span>
 
                 <ArrowRight
                   size={15}
@@ -153,81 +146,27 @@ export default function AboutHero() {
           </motion.div>
 
           {/* Right Professional Profile Panel */}
+
           <motion.div
-            initial={{ opacity: 0, x: 22, scale: 0.98 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative mx-auto w-full max-w-[390px] lg:ml-auto lg:mr-0"
+            initial={{ opacity: 0, x: 28 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.75,
+              delay: 0.12,
+              ease: "easeOut",
+            }}
+            className="relative mx-auto w-full max-w-[560px]"
           >
-            <div className="relative border border-[#C9A45C]/25 bg-[#081725] p-2.5">
-              {/* Inner Profile Panel */}
-              <div className="relative flex min-h-[330px] flex-col items-center justify-center overflow-hidden border border-white/[0.08] px-6 py-12 sm:min-h-[390px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#193750] via-[#0E2238] to-[#081725]" />
-
-                <div
-                  className="absolute inset-0 opacity-[0.04]"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-                    backgroundSize: "36px 36px",
-                  }}
-                />
-
-                {/* Decorative Circles */}
-                <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full border border-[#C9A45C]/15" />
-
-                <div className="absolute -bottom-20 -left-16 h-52 w-52 rounded-full border border-[#C9A45C]/10" />
-
-                {/* Profile Content */}
-                <div className="relative z-10 text-center">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#C9A45C]/35 bg-[#C9A45C]/[0.05]">
-                    <Scale
-                      size={32}
-                      strokeWidth={1.1}
-                      className="text-[#C9A45C]"
-                    />
-                  </div>
-
-                  <p className="mt-7 text-[9px] font-bold uppercase tracking-[0.25em] text-[#C9A45C]">
-                    Legal Practice
-                  </p>
-
-                  <h2 className="mt-3 font-serif text-[29px] leading-tight text-[#FAF8F3] sm:text-[34px]">
-                    Parthiv Vyas
-                  </h2>
-
-                  <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#E4CC98]">
-                    Advocate
-                  </p>
-
-                  <div className="mx-auto mt-6 h-px w-12 bg-[#C9A45C]/60" />
-
-                  <p className="mx-auto mt-5 max-w-[230px] text-[11px] leading-6 text-[#AAB6C1]">
-                    Legal representation, guidance and documentation
-                    tailored to the requirements of each matter.
-                  </p>
-                </div>
-
-                {/* Decorative Index */}
-                <span className="absolute bottom-3 left-4 font-serif text-6xl text-white/[0.035]">
-                  VP
-                </span>
-
-                <span className="absolute right-4 top-4 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/30">
-                  Ahmedabad
-                </span>
-              </div>
-            </div>
-
-            {/* Bottom Label */}
-            <div className="absolute -bottom-4 left-4 border border-[#C9A45C]/20 bg-[#FAF8F3] px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.12)] sm:-left-5">
-              <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-[#0E2238]">
-                V&P Advocates and Notary
-              </p>
-
-              <p className="mt-1 text-[9px] text-[#647180]">
-                Professional legal services
-              </p>
+            {/* Keep the original 3:2 landscape ratio to prevent cropping */}
+            <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#F0EAE0] rounded-[10px]">
+              <Image
+                src="/advocate-parthiv-vyas.png"
+                alt="Advocate Parthiv Vyas in a professional legal setting"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 560px"
+                className="object-contain"
+              />
             </div>
           </motion.div>
         </div>

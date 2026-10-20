@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -45,8 +45,6 @@ export default function ProfessionalIntro() {
       ========================================================= */}
 
       <div className="relative mx-auto max-w-[1280px] px-6 lg:px-10">
-   
-
         {/* =======================================================
             MAIN GRID
         ======================================================= */}
@@ -60,128 +58,21 @@ export default function ProfessionalIntro() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.75 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
             className="relative mx-auto w-full max-w-[500px] lg:mx-0"
           >
-            {/* Main profile card */}
-            <div className="relative overflow-hidden bg-[#0E2238] shadow-[0_25px_65px_rgba(14,34,56,0.14)]">
-              {/* Grid */}
-              <div
-                className="absolute inset-0 opacity-[0.035]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-                  backgroundSize: "48px 48px",
-                }}
+            {/* Courtroom Image */}
+            <div className="relative h-[420px] w-full overflow-hidden bg-[#0E2238] sm:h-[520px] lg:h-[650px]">
+              <Image
+                src="/courtroom-legal.png"
+                alt="Elegant courtroom featuring the scales of justice and a judge's gavel"
+                fill
+                priority
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 500px"
+                className="object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
               />
-
-              {/* Decorative circles */}
-              <div className="absolute -right-28 -top-28 h-72 w-72 rounded-full border border-[#C9A45C]/10" />
-
-              <div className="absolute -right-14 -top-14 h-44 w-44 rounded-full border border-[#C9A45C]/10" />
-
-              {/* Gold vertical accent */}
-              <div className="absolute bottom-0 left-0 top-0 w-1 bg-[#C9A45C]" />
-
-              {/* Inner frame */}
-              <div className="absolute inset-5 border border-white/[0.08]" />
-
-              {/* Header */}
-              <div className="relative z-10 flex items-center justify-between px-8 pt-7">
-                <div>
-                  <p className="text-[8px] font-bold uppercase tracking-[0.3em] text-[#E4CC98]">
-                    Advocate
-                  </p>
-
-                  <div className="mt-2 h-px w-9 bg-[#C9A45C]" />
-                </div>
-
-                <span className="font-serif text-2xl text-[#C9A45C]">
-                  V&P
-                </span>
-              </div>
-
-              {/* =================================================
-                  PROFILE IMAGE PLACEHOLDER
-              ================================================= */}
-
-              <div className="relative mx-10 mt-7 h-[350px] overflow-hidden bg-[#193750]">
-                {/* Approved professional photograph can replace this area */}
-
-                <div
-                  className="absolute inset-0 opacity-[0.04]"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                  }}
-                />
-
-                {/* Abstract portrait frame */}
-                <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#C9A45C]/30">
-                  <div className="flex h-28 w-28 items-center justify-center rounded-full border border-[#C9A45C]/20 bg-[#0E2238]/40">
-                    <Scale
-                      size={42}
-                      strokeWidth={0.9}
-                      className="text-[#C9A45C]"
-                    />
-                  </div>
-                </div>
-
-                {/* Vertical line */}
-                <div className="absolute bottom-0 left-1/2 top-0 w-px bg-[#C9A45C]/10" />
-
-                {/* Horizontal line */}
-                <div className="absolute left-0 right-0 top-1/2 h-px bg-[#C9A45C]/10" />
-
-                {/* Bottom gradient */}
-                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#081725] via-[#081725]/50 to-transparent" />
-
-                {/* Image label */}
-                <div className="absolute bottom-7 left-7">
-                  <p className="text-[8px] font-bold uppercase tracking-[0.3em] text-[#C9A45C]">
-                    Our Legal Practice
-                  </p>
-
-                  <p className="mt-2 font-serif text-3xl text-[#FAF8F3]">
-                    V&P Advocates and Notary
-                  </p>
-
-                  <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-[#9BA9B5]">
-                    Legal Representation · Advisory · Documentation
-                  </p>
-                </div>
-              </div>
-
-              {/* Bottom profile details */}
-              <div className="relative z-10 px-8 py-7">
-                <div className="grid grid-cols-2 gap-5 border-t border-white/10 pt-5">
-                  <div>
-                    <p className="text-[8px] uppercase tracking-[0.2em] text-[#718291]">
-                      Location
-                    </p>
-
-                    <p className="mt-1 text-[11px] font-medium text-[#F5F1E8]">
-                      Ahmedabad, Gujarat
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="text-[8px] uppercase tracking-[0.2em] text-[#718291]">
-                      Practice
-                    </p>
-
-                    <p className="mt-1 text-[11px] font-medium text-[#F5F1E8]">
-                      Litigation & Legal Services
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-
-  
           </motion.div>
-
           {/* =====================================================
               RIGHT CONTENT
           ===================================================== */}
@@ -211,12 +102,20 @@ export default function ProfessionalIntro() {
 
             {/* Intro */}
             <p className="mt-7 max-w-2xl text-[15px] leading-7 text-[#647180]">
-              V&P Advocates and Notary is a legal practice based in Ahmedabad, Gujarat, providing assistance across litigation, property and revenue disputes, family matters, commercial disputes, tribunal proceedings, legal drafting, and notary services.
+              V&P Advocates and Notary is a legal practice based in Ahmedabad,
+              Gujarat, providing assistance across litigation, property and
+              revenue disputes, family matters, commercial disputes, tribunal
+              proceedings, legal drafting, and notary services.
             </p>
 
             {/* Second paragraph */}
             <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[#647180]">
-              We believe that effective legal assistance begins with understanding the matter, examining the relevant documents, and explaining the available legal options clearly. Our approach emphasizes careful preparation, professional responsibility, confidentiality, and clear communication throughout the legal process.
+              We believe that effective legal assistance begins with
+              understanding the matter, examining the relevant documents, and
+              explaining the available legal options clearly. Our approach
+              emphasizes careful preparation, professional responsibility,
+              confidentiality, and clear communication throughout the legal
+              process.
             </p>
 
             {/* =================================================
@@ -243,7 +142,9 @@ export default function ProfessionalIntro() {
                 </p>
 
                 <p className="mt-2 text-[10px] leading-5 text-[#8993A0]">
-                  Assistance with civil, criminal, property, family, and commercial disputes, subject to the firm's practice and jurisdiction.
+                  Assistance with civil, criminal, property, family, and
+                  commercial disputes, subject to the firm's practice and
+                  jurisdiction.
                 </p>
               </div>
 
@@ -266,7 +167,8 @@ export default function ProfessionalIntro() {
                 </p>
 
                 <p className="mt-2 text-[10px] leading-5 text-[#8993A0]">
-                  Preparation and review of agreements, contracts, sale deeds, affidavits, and other legal documents.
+                  Preparation and review of agreements, contracts, sale deeds,
+                  affidavits, and other legal documents.
                 </p>
               </div>
 
@@ -289,7 +191,8 @@ export default function ProfessionalIntro() {
                 </p>
 
                 <p className="mt-2 text-[10px] leading-5 text-[#8993A0]">
-                  A focus on careful preparation, clear explanations, discretion, and responsible legal assistance.
+                  A focus on careful preparation, clear explanations,
+                  discretion, and responsible legal assistance.
                 </p>
               </div>
             </div>
@@ -365,7 +268,6 @@ export default function ProfessionalIntro() {
               className="group mt-8 inline-flex items-center gap-3 border-b border-[#C9A45C] pb-2.5 text-[10px] font-bold uppercase tracking-[0.17em] text-[#0E2238] transition-colors hover:text-[#A98543]"
             >
               Learn More About the Firm
-
               <ArrowUpRight
                 size={15}
                 strokeWidth={1.7}
@@ -374,7 +276,6 @@ export default function ProfessionalIntro() {
             </Link>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

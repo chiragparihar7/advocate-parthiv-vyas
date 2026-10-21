@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -23,12 +22,12 @@ import Link from "next/link";
 const practiceAreas = [
   {
     number: "01",
-    title: "Civil Litigation",
-    shortTitle: "Civil Disputes",
+    title: "Cheque Bounce Cases",
+    shortTitle: "Section 138 Matters",
     description:
-      "We handle suits for recovery, injunctions, specific performance and other civil disputes. Each matter is prepared with careful drafting and clear strategy, and presented with firm representation before the City Civil Court.",
-    icon: Scale,
-    topics: ["Recovery Suits", "Injunctions", "Civil Proceedings"],
+      "We handle the full process of cheque dishonour cases under Section 138, from sending the legal notice to filing the complaint and following it through trial. We act for both complainants and accused with timely, well-prepared representation.",
+    icon: Banknote,
+    topics: ["Section 138", "Legal Notices", "Cheque Dishonour"],
   },
   {
     number: "02",
@@ -57,14 +56,15 @@ const practiceAreas = [
     icon: Building2,
     topics: ["Title Disputes", "Land Matters", "Document Verification"],
   },
+
   {
     number: "05",
-    title: "Cheque Bounce Cases",
-    shortTitle: "Section 138 Matters",
+    title: "Civil Litigation",
+    shortTitle: "Civil Disputes",
     description:
-      "We handle the full process of cheque dishonour cases under Section 138, from sending the legal notice to filing the complaint and following it through trial. We act for both complainants and accused with timely, well-prepared representation.",
-    icon: Banknote,
-    topics: ["Section 138", "Legal Notices", "Cheque Dishonour"],
+      "We handle suits for recovery, injunctions, specific performance and other civil disputes. Each matter is prepared with careful drafting and clear strategy, and presented with firm representation before the City Civil Court.",
+    icon: Scale,
+    topics: ["Recovery Suits", "Injunctions", "Civil Proceedings"],
   },
   {
     number: "06",
@@ -183,8 +183,8 @@ export default function PracticeAreas() {
             <p className="max-w-md text-[14px] leading-7 text-[#647180]">
               V&amp;P Advocates and Notary provides legal assistance across
               civil and criminal litigation, family matters, property and
-              revenue disputes, commercial matters, tribunal proceedings,
-              legal documentation and notary services in Ahmedabad, Gujarat.
+              revenue disputes, commercial matters, tribunal proceedings, legal
+              documentation and notary services in Ahmedabad, Gujarat.
             </p>
 
             <div className="mt-5 flex items-center gap-3">
@@ -319,8 +319,8 @@ export default function PracticeAreas() {
 
               <p className="mt-1 max-w-2xl text-[11px] leading-5 text-[#8993A0]">
                 Every matter depends on its specific facts, documents and
-                applicable law. Contact the office to discuss your
-                requirements and determine the appropriate next steps.
+                applicable law. Contact the office to discuss your requirements
+                and determine the appropriate next steps.
               </p>
             </div>
           </div>
@@ -330,7 +330,6 @@ export default function PracticeAreas() {
             className="group inline-flex items-center gap-3 self-start text-[10px] font-bold uppercase tracking-[0.16em] text-[#0E2238] lg:self-center"
           >
             View All Practice Areas
-
             <ArrowRight
               size={16}
               strokeWidth={1.7}

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -167,6 +168,7 @@ export default function ContactCTA() {
 
               <div className="absolute left-0 right-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#C9A45C] to-transparent" />
 
+              {/* Panel Content */}
               <div className="relative z-10 p-6 sm:p-9 lg:p-10">
                 {/* Panel Heading */}
                 <div className="flex items-start justify-between gap-4">
@@ -199,6 +201,7 @@ export default function ContactCTA() {
 
                 {/* Contact Information */}
                 <div className="mt-7 space-y-3">
+                  {/* Telephone */}
                   <div className="flex items-center gap-4 border border-white/10 bg-white/[0.025] p-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#C9A45C]/20 bg-[#C9A45C]/[0.06]">
                       <Phone
@@ -208,7 +211,7 @@ export default function ContactCTA() {
                       />
                     </div>
 
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[#E4CC98]">
                         Telephone Enquiries
                       </p>
@@ -219,6 +222,7 @@ export default function ContactCTA() {
                     </div>
                   </div>
 
+                  {/* Email */}
                   <div className="flex items-center gap-4 border border-white/10 bg-white/[0.025] p-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#C9A45C]/20 bg-[#C9A45C]/[0.06]">
                       <Mail
@@ -228,18 +232,23 @@ export default function ContactCTA() {
                       />
                     </div>
 
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[#E4CC98]">
                         Written Enquiries
                       </p>
 
-                      <p className="mt-1 text-[11px] leading-5 text-[#AAB7C2]">
-                        Submit your enquiry through the contact page.
-                      </p>
+                      <a
+                        href="mailto:vyas.parthiv8049@yahoo.com"
+                        style={{ color: "#AAB7C2" }}
+                        className="mt-1 block break-all text-[11px] leading-5 !text-[#AAB7C2] transition-colors hover:!text-[#E4CC98]"
+                      >
+                        vyas.parthiv8049@yahoo.com
+                      </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 border border-white/10 bg-white/[0.025] p-4">
+                  {/* Office Address 1 */}
+                  <div className="flex items-start gap-4 border border-white/10 bg-white/[0.025] p-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#C9A45C]/20 bg-[#C9A45C]/[0.06]">
                       <MapPin
                         size={17}
@@ -248,14 +257,60 @@ export default function ContactCTA() {
                       />
                     </div>
 
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[#E4CC98]">
-                        Practice Location
+                        Office Address 1
                       </p>
 
                       <p className="mt-1 text-[11px] leading-5 text-[#AAB7C2]">
-                        Ahmedabad, Gujarat, India
+                        Shop No. 8, Dev Ashish Divine, Opposite Gayatri Green,
+                        Near Sadguru Circle, Hanspura, Naroda, Ahmedabad,
+                        Gujarat, India.
                       </p>
+
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=Shop+No+8+Dev+Ashish+Divine+Opposite+Gayatri+Green+Near+Sadguru+Circle+Hanspura+Naroda+Ahmedabad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#E4CC98" }}
+                        className="mt-2 inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.12em] !text-[#E4CC98] transition-colors hover:!text-white"
+                      >
+                        Get Directions
+                        <ArrowUpRight size={12} />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Office Address 2 */}
+                  <div className="flex items-start gap-4 border border-white/10 bg-white/[0.025] p-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#C9A45C]/20 bg-[#C9A45C]/[0.06]">
+                      <MapPin
+                        size={17}
+                        strokeWidth={1.4}
+                        className="text-[#C9A45C]"
+                      />
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[#E4CC98]">
+                        Office Address 2
+                      </p>
+
+                      <p className="mt-1 text-[11px] leading-5 text-[#AAB7C2]">
+                        62, Durganagar Society, Near Naroda Police Station,
+                        Naroda, Ahmedabad, Gujarat - 382330.
+                      </p>
+
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=62+Durganagar+Society+Near+Naroda+Police+Station+Naroda+Ahmedabad+382330"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#E4CC98" }}
+                        className="mt-2 inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.12em] !text-[#E4CC98] transition-colors hover:!text-white"
+                      >
+                        Get Directions
+                        <ArrowUpRight size={12} />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -300,37 +355,9 @@ export default function ContactCTA() {
                 </div>
               </div>
 
+              {/* Panel Bottom Accent */}
               <div className="h-px bg-gradient-to-r from-transparent via-[#C9A45C]/40 to-transparent" />
             </div>
-
-            {/* Floating Label */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute -bottom-5 -left-3 hidden border border-[#C9A45C]/20 bg-white px-4 py-3 shadow-[0_15px_35px_rgba(14,34,56,0.12)] sm:block lg:-left-6"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center bg-[#F5F2EB]">
-                  <Scale
-                    size={15}
-                    strokeWidth={1.4}
-                    className="text-[#A98543]"
-                  />
-                </div>
-
-                <div>
-                  <p className="text-[8px] font-bold uppercase tracking-[0.15em] text-[#A98543]">
-                    V&P Advocates and Notary
-                  </p>
-
-                  <p className="mt-1 text-[9px] text-[#8993A0]">
-                    Ahmedabad, Gujarat
-                  </p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
 

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -12,6 +13,21 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
+
+const officeAddresses = [
+  {
+    title: "Office Address 1",
+    address:
+      "Shop No. 8, Dev Ashish Divine, Opposite Gayatri Green, Near Sadguru Circle, Hanspura, Naroda, Ahmedabad, Gujarat, India.",
+    icon: Navigation,
+  },
+  {
+    title: "Office Address 2",
+    address:
+      "62, Durganagar Society, Near Naroda Police Station, Naroda, Ahmedabad, Gujarat - 382330.",
+    icon: MapPin,
+  },
+];
 
 export default function Location() {
   return (
@@ -53,15 +69,18 @@ export default function Location() {
 
             <h2 className="mt-5 max-w-3xl font-serif text-[46px] leading-[0.98] tracking-[-0.035em] text-[#0E2238] sm:text-[58px] lg:text-[68px]">
               Legal assistance
-              <span className="block text-[#A98543]">in Ahmedabad.</span>
+              <span className="block text-[#A98543]">
+                in Ahmedabad.
+              </span>
             </h2>
           </div>
 
           <div className="lg:pb-1">
             <p className="max-w-lg text-[13px] leading-7 text-[#647180] sm:text-[14px]">
-              V&P Advocates and Notary provides legal assistance across a range
-              of practice areas. Contact the firm to enquire about your matter
-              and confirm the appropriate office location before visiting.
+              V&P Advocates and Notary provides legal assistance across a
+              range of practice areas. Contact the firm to enquire about
+              your matter and confirm the appropriate office location
+              before visiting.
             </p>
 
             <div className="mt-5 flex items-center gap-3">
@@ -123,40 +142,50 @@ export default function Location() {
 
                 <h3 className="mt-3 font-serif text-[38px] leading-[1.02] text-[#0E2238] sm:text-[44px]">
                   Ahmedabad
-                  <span className="block text-[#A98543]">Gujarat</span>
+                  <span className="block text-[#A98543]">
+                    Gujarat
+                  </span>
                 </h3>
 
                 <p className="mt-5 max-w-md text-[12px] leading-6 text-[#647180]">
-                  For enquiries regarding civil, criminal, property, family,
-                  commercial, tribunal, drafting, and notary matters, contact
-                  the firm to discuss your requirements and confirm the next
-                  steps.
+                  For enquiries regarding civil, criminal, property,
+                  family, commercial, tribunal, drafting, and notary
+                  matters, contact the firm to discuss your requirements
+                  and confirm the next steps.
                 </p>
               </div>
 
-              {/* Information */}
+              {/* Office Addresses */}
               <div className="mt-8 border-t border-[#E7E1D6] pt-7">
                 <div className="space-y-6">
-                  {/* Location */}
-                  <div className="flex gap-4">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#FBF7ED]">
-                      <Navigation
-                        size={16}
-                        strokeWidth={1.3}
-                        className="text-[#C9A45C]"
-                      />
-                    </div>
+                  {officeAddresses.map((office) => {
+                    const OfficeIcon = office.icon;
 
-                    <div>
-                      <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#0E2238]">
-                        Practice Location
-                      </p>
+                    return (
+                      <div
+                        key={office.title}
+                        className="flex gap-4"
+                      >
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#FBF7ED]">
+                          <OfficeIcon
+                            size={16}
+                            strokeWidth={1.3}
+                            className="text-[#C9A45C]"
+                          />
+                        </div>
 
-                      <p className="mt-1 text-[11px] leading-5 text-[#647180]">
-                        Ahmedabad, Gujarat, India
-                      </p>
-                    </div>
-                  </div>
+                        <div className="min-w-0">
+                          <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#0E2238]">
+                            {office.title}
+                          </p>
+
+                          <p className="mt-1 text-[11px] leading-5 text-[#647180]">
+                            {office.address}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
 
                   {/* Appointment Information */}
                   <div className="flex gap-4">
@@ -174,8 +203,8 @@ export default function Location() {
                       </p>
 
                       <p className="mt-1 text-[11px] leading-5 text-[#647180]">
-                        Contact the firm to confirm availability and appointment
-                        arrangements.
+                        Contact the firm to confirm availability and
+                        appointment arrangements.
                       </p>
                     </div>
                   </div>
@@ -185,11 +214,7 @@ export default function Location() {
               {/* CTA */}
               <Link
                 href="/contact"
-                className="group mt-9 inline-flex items-center justify-center gap-3
-    bg-[#0E2238] px-6 py-3.5
-    text-[9px] font-bold uppercase tracking-[0.17em] !text-white
-    opacity-100 transition-colors duration-300
-    hover:bg-[#081725]"
+                className="group mt-9 inline-flex items-center justify-center gap-3 bg-[#0E2238] px-6 py-3.5 text-[9px] font-bold uppercase tracking-[0.17em] !text-white opacity-100 transition-colors duration-300 hover:bg-[#081725]"
               >
                 <span className="!text-white opacity-100">
                   Contact the Firm
@@ -252,7 +277,7 @@ export default function Location() {
             {/* Gold Glow */}
             <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C9A45C]/10 blur-2xl" />
 
-            {/* Central Location Graphic — Not a Real Map Pin */}
+            {/* Central Location Graphic */}
             <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -286,7 +311,11 @@ export default function Location() {
             {/* Top Label */}
             <div className="absolute left-5 top-5 border border-white/10 bg-[#081725]/75 px-4 py-3 backdrop-blur-sm sm:left-7 sm:top-7 sm:px-5 sm:py-4">
               <div className="flex items-center gap-3">
-                <Route size={15} strokeWidth={1.3} className="text-[#C9A45C]" />
+                <Route
+                  size={15}
+                  strokeWidth={1.3}
+                  className="text-[#C9A45C]"
+                />
 
                 <div>
                   <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#81909F]">
@@ -361,11 +390,12 @@ export default function Location() {
 
               <div>
                 <p className="text-[8px] font-bold uppercase tracking-[0.17em] text-[#0E2238]">
-                  Office Address
+                  Office Addresses
                 </p>
 
-                <p className="mt-1 text-[10px] text-[#8993A0]">
-                  Please confirm through the contact page.
+                <p className="mt-1 text-[10px] leading-5 text-[#8993A0]">
+                  Two office locations in Naroda, Ahmedabad. Please
+                  confirm your appointment before visiting.
                 </p>
               </div>
             </div>
@@ -389,8 +419,6 @@ export default function Location() {
             </div>
           </div>
         </motion.div>
-
-     
       </div>
     </section>
   );

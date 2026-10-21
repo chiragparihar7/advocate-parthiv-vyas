@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import FAQsPageClient from "./FAQsPageClient";
 
-const SITE_URL = "https://vpadvocates.in";
+const SITE_URL = "https://www.vpadvocates.in";
 
 const PAGE_TITLE =
   "Legal FAQs in Ahmedabad | V&P Advocates and Notary";

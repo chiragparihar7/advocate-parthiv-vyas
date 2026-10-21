@@ -10,7 +10,7 @@ import ProfessionalExperience from "@/components/about/ProfessionalExperience";
 import LegalKnowledge from "@/components/about/LegalKnowledge";
 import AboutCTA from "@/components/about/AboutCTA";
 
-const SITE_URL = "https://vpadvocates.in";
+const SITE_URL = "https://www.vpadvocates.in";
 
 const PAGE_TITLE =
   "About Advocate Parthiv Vyas | V&P Advocates, Ahmedabad";

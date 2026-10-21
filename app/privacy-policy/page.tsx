@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PrivacyPolicyPageClient from "./PrivacyPolicyPageClient";
 
-const SITE_URL = "https://vpadvocates.in";
+const SITE_URL = "https://www.vpadvocates.in";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | V&P Advocates and Notary, Ahmedabad",

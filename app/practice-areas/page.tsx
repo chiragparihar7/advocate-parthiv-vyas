@@ -9,7 +9,7 @@ import PracticeAreasKnowledge from "@/components/practice-areas/PracticeAreasKno
 import PracticeAreasFAQ from "@/components/practice-areas/PracticeAreasFAQ";
 import PracticeAreasCTA from "@/components/practice-areas/PracticeAreasCTA";
 
-const SITE_URL = "https://vpadvocates.in";
+const SITE_URL = "https://www.vpadvocates.in";
 
 const PAGE_TITLE =
   "Legal Practice Areas in Ahmedabad | V&P Advocates";

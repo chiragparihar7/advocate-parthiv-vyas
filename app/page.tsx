@@ -11,7 +11,7 @@ import Location from "@/components/Home/Location";
 import ContactCTA from "@/components/Home/ContactCTA";
 import DisclaimerNotice from "@/components/Home/DisclaimerNotice";
 
-const SITE_URL = "https://vpadvocates.in";
+const SITE_URL = "https://www.vpadvocates.in";
 const PAGE_URL = `${SITE_URL}/`;
 
 export const metadata: Metadata = {

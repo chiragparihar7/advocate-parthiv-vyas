@@ -6,6 +6,7 @@ import "./globals.css";
 
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import FloatingContactButtons from "@/components/common/FloatingContactButtons";
 
 /* =========================================================
    TYPOGRAPHY
@@ -28,22 +29,26 @@ const cormorant = Cormorant_Garamond({
    SITE METADATA
    ========================================================= */
 
+const SITE_URL = "https://vpadvocates.in";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+
   title: {
     default: "Advocate Parthiv Vyas",
     template: "%s | Advocate Parthiv Vyas",
   },
 
   description:
-    "Professional legal information, practice areas and contact information for Advocate Parthiv Vyas.",
+    "Professional legal information, practice areas and contact information for Advocate Parthiv Vyas in Ahmedabad, Gujarat.",
 
   keywords: [
     "Advocate Parthiv Vyas",
-    "Advocate",
-    "Lawyer",
-    "Legal Services",
-    "Legal Practice",
-    "Ahmedabad Advocate",
+    "V&P Advocates and Notary",
+    "Advocate in Ahmedabad",
+    "Lawyer in Ahmedabad",
+    "Legal Services Ahmedabad",
+    "Legal Practice Gujarat",
   ],
 
   authors: [
@@ -61,22 +66,46 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    title: "Advocate Parthiv Vyas",
+    title: "Advocate Parthiv Vyas | V&P Advocates and Notary",
     description:
-      "Professional legal information, practice areas and contact information for Advocate Parthiv Vyas.",
-    siteName: "Advocate Parthiv Vyas",
+      "Explore legal practice areas and contact information for V&P Advocates and Notary in Ahmedabad, Gujarat.",
+    siteName: "V&P Advocates and Notary",
     locale: "en_IN",
+    url: SITE_URL,
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Advocate Parthiv Vyas",
+    title: "Advocate Parthiv Vyas | V&P Advocates and Notary",
     description:
-      "Professional legal information, practice areas and contact information for Advocate Parthiv Vyas.",
+      "Explore legal practice areas and contact information for V&P Advocates and Notary in Ahmedabad, Gujarat.",
   },
 
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      {
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 };
 
@@ -94,7 +123,7 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#FAF8F3] font-sans text-[#1D2935]">
+      <body className="flex min-h-full flex-col bg-[#FAF8F3] font-sans text-[#1D2935]">
         <Navbar />
 
         <main className="flex min-h-screen flex-1 flex-col">
@@ -102,8 +131,10 @@ export default function RootLayout({
         </main>
 
         <Footer />
+
+        {/* Floating phone and WhatsApp contact buttons */}
+        <FloatingContactButtons />
       </body>
     </html>
   );
 }
-

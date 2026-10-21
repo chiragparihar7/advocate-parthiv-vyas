@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 
 import ContactHero from "@/components/contact/ContactHero";
@@ -9,19 +10,62 @@ import ContactProcess from "@/components/contact/ContactProcess";
 import ContactDisclaimer from "@/components/contact/ContactDisclaimer";
 import ContactCTA from "@/components/contact/ContactCTA";
 
+const SITE_URL = "https://www.vpadvocates.in";
+
+const PAGE_TITLE =
+  "Contact Advocate Parthiv Vyas | Ahmedabad, Gujarat";
+
+const PAGE_DESCRIPTION =
+  "Contact Advocate Parthiv Vyas at V&P Advocates and Notary in Ahmedabad for legal enquiries, appointment requests and office location details.";
+
 export const metadata: Metadata = {
-  title: "Contact Advocate Parthiv Vyas | Ahmedabad",
-  description:
-    "Contact Advocate Parthiv Vyas for professional enquiries, appointments and general information regarding legal matters in Ahmedabad, Gujarat.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+
+  keywords: [
+    "contact Advocate Parthiv Vyas",
+    "V&P Advocates and Notary contact",
+    "advocate in Ahmedabad contact",
+    "lawyer in Ahmedabad contact",
+    "legal enquiry in Ahmedabad",
+    "legal consultation enquiry Ahmedabad",
+    "advocate in Naroda Ahmedabad",
+    "lawyer near Hanspura Ahmedabad",
+    "notary services Ahmedabad",
+    "V&P Advocates Ahmedabad address",
+    "Advocate Parthiv Vyas phone number",
+    "legal services in Ahmedabad Gujarat",
+  ],
+
   alternates: {
-    canonical: "/contact",
+    canonical: `${SITE_URL}/contact`,
   },
+
   openGraph: {
-    title: "Contact Advocate Parthiv Vyas | Ahmedabad",
-    description:
-      "Get in touch for professional enquiries, appointments and general information regarding legal matters.",
-    url: "/contact",
     type: "website",
+    locale: "en_IN",
+    url: `${SITE_URL}/contact`,
+    siteName: "V&P Advocates and Notary",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [
+      {
+        url: `${SITE_URL}/footerlogo1.png`,
+        alt: "V&P Advocates and Notary",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/footerlogo1.png`],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
